@@ -1,0 +1,93 @@
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(8, 22, 12, 0.78);
+    color: #b8e6c0;
+    border-radius: 12px;
+}
+
+.modules-left  { margin-left:  4px; }
+.modules-right { margin-right: 4px; }
+
+/* --- Shared widget style --- */
+#clock,
+#battery,
+#memory,
+#pulseaudio,
+#custom-power,
+#workspaces {
+    background-color: rgba(15, 60, 28, 0.62);
+    color: #a5d6aa;
+    padding: 4px 14px;
+    border-radius: 10px;
+    margin: 5px 3px;
+    border: 1px solid rgba(80, 180, 100, 0.20);
+}
+
+/* --- Workspaces --- */
+#workspaces button {
+    background: transparent;
+    color: #6baa78;
+    padding: 2px 7px;
+    border-radius: 8px;
+    transition: all 0.15s ease;
+}
+
+#workspaces button.active {
+    color: #69ff6e;
+    background-color: rgba(60, 160, 80, 0.35);
+}
+
+#workspaces button:hover {
+    background-color: rgba(60, 160, 80, 0.20);
+    color: #a5ffaa;
+}
+
+/* --- Battery states --- */
+#battery.warning {
+    background-color: rgba(140, 100, 10, 0.62);
+    color: #ffd54f;
+    border-color: rgba(255, 200, 60, 0.30);
+}
+
+#battery.critical {
+    background-color: rgba(140, 25, 25, 0.62);
+    color: #ef9a9a;
+    border-color: rgba(255, 80, 80, 0.30);
+    animation-name: blink;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        color: #ff5252;
+        background-color: rgba(180, 30, 30, 0.80);
+    }
+}
+
+/* --- Muted audio --- */
+#pulseaudio.muted {
+    color: #4a7a55;
+}
+
+/* --- Power button --- */
+#custom-power {
+    color: #ef9a9a;
+    padding: 4px 13px;
+    transition: all 0.18s ease;
+}
+
+#custom-power:hover {
+    background-color: rgba(180, 35, 35, 0.75);
+    color: #ffffff;
+    border-color: rgba(255, 100, 100, 0.40);
+}
